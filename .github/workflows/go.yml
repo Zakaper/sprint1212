@@ -21,7 +21,6 @@ jobs:
   deploy:
     name: Push Docker image to Docker Hub
     needs: test
-    if: startsWith(github.ref, 'refs/tags')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
