@@ -7,7 +7,7 @@ on: push
 jobs:
   test:
     runs-on: ubuntu-latest
-    container: golang:1.22  # Исправьте версию на актуальную
+    container: golang:1.24
     steps:
       - uses: actions/checkout@v4
       - name: Run tests
@@ -16,7 +16,7 @@ jobs:
   deploy:
     name: Push to Docker Hub
     needs: test
-    if: github.ref == 'refs/heads/main'  # Теперь будет работать для main
+    if: github.ref == 'refs/heads/main' 
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
